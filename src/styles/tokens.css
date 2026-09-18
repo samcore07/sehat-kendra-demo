@@ -1,0 +1,238 @@
+/* ============================================================
+   SEHAT KENDRA — Design Tokens
+   Source: stitch_sehat_kendra_digital_healthcare/public_digital_health_system/DESIGN.md
+   Core colours: #0072B8 | #A4D6E1 | #F4F4F4 | #333333
+   ============================================================ */
+
+/* ──────────────────────────────────────────────────────────
+   LIGHT THEME (default)
+   ────────────────────────────────────────────────────────── */
+:root,
+[data-theme="light"] {
+  /* Primary — NHA Blue */
+  --color-primary:                  #005991;
+  --color-on-primary:               #ffffff;
+  --color-primary-container:        #0072b8;   /* Approved brand blue */
+  --color-on-primary-container:     #eaf2ff;
+  --color-primary-fixed:            #d0e4ff;
+  --color-primary-fixed-dim:        #9bcbff;
+  --color-on-primary-fixed:         #001d34;
+  --color-on-primary-fixed-variant: #004a79;
+  --color-inverse-primary:          #9bcbff;
+  --color-surface-tint:             #00629f;
+
+  /* Secondary — Teal */
+  --color-secondary:                #34656f;
+  --color-on-secondary:             #ffffff;
+  --color-secondary-container:      #b8ebf6;   /* Approved accent: #A4D6E1 family */
+  --color-on-secondary-container:   #3a6b75;
+  --color-secondary-fixed:          #b8ebf6;
+  --color-secondary-fixed-dim:      #9dcfda;
+  --color-on-secondary-fixed:       #001f25;
+  --color-on-secondary-fixed-variant: #184d57;
+
+  /* Tertiary — Sage Green */
+  --color-tertiary:                 #18604d;
+  --color-on-tertiary:              #ffffff;
+  --color-tertiary-container:       #367964;
+  --color-on-tertiary-container:    #bbffe5;
+  --color-tertiary-fixed:           #acf1d7;
+  --color-tertiary-fixed-dim:       #90d4bc;
+  --color-on-tertiary-fixed:        #002118;
+  --color-on-tertiary-fixed-variant:#00513f;
+
+  /* Error */
+  --color-error:                    #ba1a1a;
+  --color-on-error:                 #ffffff;
+  --color-error-container:          #ffdad6;
+  --color-on-error-container:       #93000a;
+
+  /* Surface — Approved neutral #F4F4F4 family */
+  --color-background:               #fbf9f8;
+  --color-on-background:            #1b1c1c;
+  --color-surface:                  #fbf9f8;
+  --color-on-surface:               #1b1c1c;
+  --color-surface-variant:          #e4e2e1;
+  --color-on-surface-variant:       #404751;
+  --color-surface-dim:              #dcd9d9;
+  --color-surface-bright:           #fbf9f8;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low:    #f6f3f2;
+  --color-surface-container:        #f0eded;
+  --color-surface-container-high:   #eae8e7;
+  --color-surface-container-highest:#e4e2e1;
+  --color-inverse-surface:          #303030;
+  --color-inverse-on-surface:       #f3f0f0;
+
+  /* Outline */
+  --color-outline:                  #707882;
+  --color-outline-variant:          #c0c7d2;
+
+  /* On-surface text (approved: #333333 family) */
+  --text-primary-color:             #333333;
+
+  /* ── Shadows ── */
+  --shadow-sm:   0 1px 4px rgba(0,0,0,0.06);
+  --shadow-md:   0 2px 8px rgba(0,0,0,0.08);
+  --shadow-lg:   0 4px 16px rgba(0,0,0,0.10);
+  --shadow-header: 0 1px 8px rgba(0,0,0,0.04);
+
+  /* ── Border radius ── */
+  --radius-xs:   0.125rem;   /* 2px */
+  --radius-sm:   0.25rem;    /* 4px */
+  --radius-md:   0.375rem;   /* 6px */
+  --radius-lg:   0.5rem;     /* 8px */
+  --radius-xl:   0.75rem;    /* 12px */
+  --radius-2xl:  1rem;       /* 16px */
+  --radius-full: 9999px;
+
+  /* ── Spacing ── */
+  --space-2xs:  0.25rem;     /* 4px */
+  --space-xs:   0.5rem;      /* 8px */
+  --space-sm:   0.75rem;     /* 12px */
+  --space-md:   1rem;        /* 16px */
+  --space-lg:   1.5rem;      /* 24px */
+  --space-xl:   2rem;        /* 32px */
+  --space-2xl:  3rem;        /* 48px */
+  --space-3xl:  4rem;        /* 64px */
+  --gutter-mobile:  1rem;
+  --gutter-tablet:  1.5rem;
+  --gutter-desktop: 2rem;
+  --max-content-width: 75rem;
+
+  /* ── Typography scale ── */
+  --font-family: "Inter", "Noto Sans Devanagari", "Noto Sans Bengali", sans-serif;
+
+  --font-size-display-lg:     36px;
+  --font-size-display-lg-mob: 28px;
+  --font-size-headline-lg:    28px;
+  --font-size-headline-lg-mob:22px;
+  --font-size-headline-md:    20px;
+  --font-size-headline-sm:    16px;
+  --font-size-body-lg:        18px;
+  --font-size-body-md:        15px;
+  --font-size-body-sm:        13px;
+  --font-size-label-lg:       15px;
+  --font-size-label-md:       13px;
+  --font-size-label-sm:       11px;
+
+  --line-height-display-lg:     44px;
+  --line-height-display-lg-mob: 36px;
+  --line-height-headline-lg:    36px;
+  --line-height-headline-lg-mob:30px;
+  --line-height-headline-md:    28px;
+  --line-height-headline-sm:    24px;
+  --line-height-body-lg:        28px;
+  --line-height-body-md:        22px;
+  --line-height-body-sm:        18px;
+  --line-height-label-lg:       20px;
+  --line-height-label-md:       18px;
+  --line-height-label-sm:       14px;
+
+  --font-weight-regular:  400;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  /* ── Layout shell dimensions ── */
+  --header-height: 7rem;    /* gov-ribbon (2rem) + main header (5rem) */
+  --sidebar-width:     17rem;
+  --sidebar-collapsed: 4rem;
+  --transition-speed: 200ms;
+}
+
+/* ──────────────────────────────────────────────────────────
+   DARK THEME
+   ────────────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --color-primary:                  #9bcbff;
+  --color-on-primary:               #003257;
+  --color-primary-container:        #004779;
+  --color-on-primary-container:     #d0e4ff;
+  --color-primary-fixed:            #d0e4ff;
+  --color-primary-fixed-dim:        #9bcbff;
+  --color-on-primary-fixed:         #001d34;
+  --color-on-primary-fixed-variant: #004a79;
+  --color-inverse-primary:          #005991;
+  --color-surface-tint:             #9bcbff;
+
+  --color-secondary:                #9dcfda;
+  --color-on-secondary:             #003640;
+  --color-secondary-container:      #1f4d57;
+  --color-on-secondary-container:   #b8ebf6;
+  --color-secondary-fixed:          #b8ebf6;
+  --color-secondary-fixed-dim:      #9dcfda;
+  --color-on-secondary-fixed:       #001f25;
+  --color-on-secondary-fixed-variant: #184d57;
+
+  --color-tertiary:                 #90d4bc;
+  --color-on-tertiary:              #003829;
+  --color-tertiary-container:       #004f3b;
+  --color-on-tertiary-container:    #acf1d7;
+  --color-tertiary-fixed:           #acf1d7;
+  --color-tertiary-fixed-dim:       #90d4bc;
+  --color-on-tertiary-fixed:        #002118;
+  --color-on-tertiary-fixed-variant:#00513f;
+
+  --color-error:                    #ffb4ab;
+  --color-on-error:                 #690005;
+  --color-error-container:          #93000a;
+  --color-on-error-container:       #ffdad6;
+
+  --color-background:               #121314;
+  --color-on-background:            #e3e2e2;
+  --color-surface:                  #121314;
+  --color-on-surface:               #e3e2e2;
+  --color-surface-variant:          #3d4450;
+  --color-on-surface-variant:       #bdc5d0;
+  --color-surface-dim:              #121314;
+  --color-surface-bright:           #383939;
+  --color-surface-container-lowest: #0d0e0f;
+  --color-surface-container-low:    #1a1c1d;
+  --color-surface-container:        #1e2021;
+  --color-surface-container-high:   #282a2b;
+  --color-surface-container-highest:#333536;
+  --color-inverse-surface:          #e3e2e2;
+  --color-inverse-on-surface:       #303030;
+
+  --color-outline:                  #878f9a;
+  --color-outline-variant:          #3d4450;
+
+  --text-primary-color:             #e3e2e2;
+
+  --shadow-sm:   0 1px 4px rgba(0,0,0,0.30);
+  --shadow-md:   0 2px 8px rgba(0,0,0,0.40);
+  --shadow-lg:   0 4px 16px rgba(0,0,0,0.50);
+  --shadow-header: 0 1px 8px rgba(0,0,0,0.30);
+}
+
+/* ──────────────────────────────────────────────────────────
+   HIGH CONTRAST OVERLAY (stacked on top of light/dark)
+   ────────────────────────────────────────────────────────── */
+[data-contrast="high"] {
+  --color-primary:              #003d6b;
+  --color-on-primary:           #ffffff;
+  --color-primary-container:    #003d6b;
+  --color-on-primary-container: #ffffff;
+  --color-on-surface:           #000000;
+  --color-on-surface-variant:   #000000;
+  --color-background:           #ffffff;
+  --color-surface:              #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low:    #f0f0f0;
+  --color-surface-container:        #e8e8e8;
+  --color-outline:              #000000;
+  --color-outline-variant:      #000000;
+  --color-secondary:            #003640;
+  --color-tertiary:             #002118;
+  --color-error:                #870000;
+}
+
+[data-theme="dark"][data-contrast="high"] {
+  --color-on-surface:           #ffffff;
+  --color-on-surface-variant:   #ffffff;
+  --color-background:           #000000;
+  --color-surface:              #000000;
+  --color-surface-container-lowest: #000000;
+  --color-outline:              #ffffff;
+  --color-outline-variant:      #ffffff;
+}

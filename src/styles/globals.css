@@ -1,0 +1,12 @@
+/* ============================================================
+   SEHAT KENDRA — Master Global Styles
+   ============================================================ */
+
+@import './tokens.css';
+@import './base.css';
+@import './components.css';
+@import './layouts.css';
+@import './doctor-workstation.css';
+@import './patient-dashboard.css';
+@import './ayush-centre.css';
+

@@ -1,0 +1,212 @@
+/* ============================================================
+   SEHAT KENDRA — Base Reset, Typography & Utilities
+   ============================================================ */
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+}
+
+::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; }
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body-md);
+  line-height: var(--line-height-body-md);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-on-surface);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-speed) ease,
+              color var(--transition-speed) ease;
+}
+
+/* ── Skip-to-content (accessibility) ── */
+.sk-skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-md);
+  padding: var(--space-xs) var(--space-md);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: var(--font-size-label-md);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-lg);
+  z-index: 9999;
+  text-decoration: none;
+  transition: top 0.1s;
+}
+.sk-skip-link:focus {
+  top: var(--space-md);
+}
+
+/* ── Focus ring ── */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Typography classes (mirrors Stitch scale) ── */
+.t-display-lg {
+  font-size: var(--font-size-display-lg);
+  line-height: var(--line-height-display-lg);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.02em;
+}
+.t-display-lg-mob {
+  font-size: var(--font-size-display-lg-mob);
+  line-height: var(--line-height-display-lg-mob);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.01em;
+}
+.t-headline-lg {
+  font-size: var(--font-size-headline-lg);
+  line-height: var(--line-height-headline-lg);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.01em;
+}
+.t-headline-lg-mob {
+  font-size: var(--font-size-headline-lg-mob);
+  line-height: var(--line-height-headline-lg-mob);
+  font-weight: var(--font-weight-bold);
+}
+.t-headline-md {
+  font-size: var(--font-size-headline-md);
+  line-height: var(--line-height-headline-md);
+  font-weight: var(--font-weight-semibold);
+}
+.t-headline-sm {
+  font-size: var(--font-size-headline-sm);
+  line-height: var(--line-height-headline-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.01em;
+}
+.t-body-lg {
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-body-lg);
+}
+.t-body-md {
+  font-size: var(--font-size-body-md);
+  line-height: var(--line-height-body-md);
+}
+.t-body-sm {
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-body-sm);
+}
+.t-label-lg {
+  font-size: var(--font-size-label-lg);
+  line-height: var(--line-height-label-lg);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+.t-label-md {
+  font-size: var(--font-size-label-md);
+  line-height: var(--line-height-label-md);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.03em;
+}
+.t-label-sm {
+  font-size: var(--font-size-label-sm);
+  line-height: var(--line-height-label-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.06em;
+}
+
+/* ── Font-size scaling (gov accessibility requirement) ── */
+[data-font-scale="lg"] { font-size: 112.5%; }
+[data-font-scale="xl"] { font-size: 125%; }
+
+/* ── Links ── */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* ── Material Symbols helper ── */
+.icon {
+  font-family: 'Material Symbols Outlined';
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+.icon-fill {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.icon-sm  { font-size: 16px; }
+.icon-md  { font-size: 20px; }
+.icon-lg  { font-size: 24px; }
+.icon-xl  { font-size: 28px; }
+
+/* ── Surface colours utility ── */
+.bg-surface               { background-color: var(--color-surface); }
+.bg-surface-low           { background-color: var(--color-surface-container-low); }
+.bg-surface-container     { background-color: var(--color-surface-container); }
+.bg-surface-high          { background-color: var(--color-surface-container-high); }
+.bg-surface-white         { background-color: var(--color-surface-container-lowest); }
+.bg-primary-container     { background-color: var(--color-primary-container); }
+.bg-secondary-container   { background-color: var(--color-secondary-container); }
+.bg-primary               { background-color: var(--color-primary); }
+
+.text-primary             { color: var(--color-primary); }
+.text-on-surface          { color: var(--color-on-surface); }
+.text-on-surface-variant  { color: var(--color-on-surface-variant); }
+.text-on-primary          { color: var(--color-on-primary); }
+.text-on-primary-container{ color: var(--color-on-primary-container); }
+
+/* ── Animation helpers ── */
+@keyframes spin-slow  { to { transform: rotate(360deg); } }
+@keyframes fade-in    { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slide-down { from { transform: translateY(-8px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes pulse-dot  { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.animate-spin     { animation: spin-slow 1s linear infinite; }
+.animate-fade-in  { animation: fade-in 0.2s ease forwards; }
+.animate-slide-down { animation: slide-down 0.2s ease forwards; }
+.animate-pulse    { animation: pulse-dot 2s ease-in-out infinite; }
+
+/* ── Transition helpers ── */
+.transition-colors {
+  transition: color var(--transition-speed) ease,
+              background-color var(--transition-speed) ease,
+              border-color var(--transition-speed) ease;
+}
+.transition-all {
+  transition: all var(--transition-speed) ease;
+}
+.transition-transform {
+  transition: transform var(--transition-speed) ease;
+}
+
+/* ── Dividers ── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-outline-variant);
+  margin: 0;
+}

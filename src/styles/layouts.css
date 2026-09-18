@@ -1,0 +1,383 @@
+/* ============================================================
+   SEHAT KENDRA — Application Shell & Layout Systems
+   Three layouts: Public (no sidebar), Patient Portal, Admin Portal
+   ============================================================ */
+
+/* ──────────────────────────────────────────────────────────
+   APP SHELL ROOT
+   ────────────────────────────────────────────────────────── */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── Sticky compound header (gov ribbon + main header) ── */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Content area pushed below fixed header ── */
+.app-content {
+  flex: 1;
+  margin-top: var(--header-height);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ──────────────────────────────────────────────────────────
+   PUBLIC / LANDING LAYOUT (no sidebar — full width)
+   ────────────────────────────────────────────────────────── */
+.layout-public .page-wrapper {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter-mobile);
+}
+@media (min-width: 768px) {
+  .layout-public .page-wrapper { padding: 0 var(--gutter-tablet); }
+}
+@media (min-width: 1024px) {
+  .layout-public .page-wrapper { padding: 0 var(--gutter-desktop); }
+}
+
+/* ──────────────────────────────────────────────────────────
+   PORTAL LAYOUTS (with sidebar)
+   ────────────────────────────────────────────────────────── */
+.layout-portal {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Sidebar container ── */
+.layout-portal__sidebar {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  z-index: 40;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width var(--transition-speed) ease,
+              transform var(--transition-speed) ease;
+}
+.layout-portal__sidebar.is-collapsed {
+  width: var(--sidebar-collapsed);
+}
+/* Mobile: slide in/out */
+@media (max-width: 1023px) {
+  .layout-portal__sidebar {
+    width: var(--sidebar-width);
+    transform: translateX(-100%);
+  }
+  .layout-portal__sidebar.is-mobile-open {
+    transform: translateX(0);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* ── Mobile sidebar overlay ── */
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  top: var(--header-height);
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 39;
+}
+.mobile-overlay.is-active { display: block; }
+
+/* ── Main content panel ── */
+.layout-portal__main {
+  flex: 1;
+  overflow-y: auto;
+  margin-left: var(--sidebar-width);
+  transition: margin-left var(--transition-speed) ease;
+}
+.layout-portal__main.sidebar-collapsed {
+  margin-left: var(--sidebar-collapsed);
+}
+@media (max-width: 1023px) {
+  .layout-portal__main {
+    margin-left: 0 !important;
+  }
+}
+
+/* ── Page inner padding ── */
+.portal-page {
+  padding: var(--space-lg) var(--gutter-mobile);
+  max-width: 1200px;
+}
+@media (min-width: 768px) {
+  .portal-page { padding: var(--space-xl) var(--gutter-tablet); }
+}
+@media (min-width: 1280px) {
+  .portal-page { padding: var(--space-xl) var(--gutter-desktop); }
+}
+
+/* ── Page header (breadcrumb + title area) ── */
+.portal-page__header {
+  margin-bottom: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+.portal-page__header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+.portal-page__title {
+  font-size: var(--font-size-headline-lg-mob);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-on-surface);
+  line-height: var(--line-height-headline-lg-mob);
+}
+@media (min-width: 768px) {
+  .portal-page__title {
+    font-size: var(--font-size-headline-lg);
+    line-height: var(--line-height-headline-lg);
+  }
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-size: var(--font-size-label-sm);
+  color: var(--color-on-surface-variant);
+  flex-wrap: wrap;
+}
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+.breadcrumb__link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.breadcrumb__link:hover { text-decoration: underline; }
+.breadcrumb__sep {
+  color: var(--color-outline-variant);
+  font-size: 10px;
+}
+.breadcrumb__current {
+  color: var(--color-on-surface-variant);
+}
+
+/* ──────────────────────────────────────────────────────────
+   PATIENT PORTAL SPECIFIC LAYOUTS
+   ────────────────────────────────────────────────────────── */
+/* ── Patient identity strip (pinned below page header) ── */
+.patient-id-strip {
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-xl);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+@media (min-width: 1024px) {
+  .patient-id-strip { flex-direction: row; align-items: center; justify-content: space-between; }
+}
+.patient-id-strip__avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-headline-md);
+  font-weight: var(--font-weight-bold);
+  flex-shrink: 0;
+  position: relative;
+}
+.patient-id-strip__verified-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background-color: var(--color-tertiary-fixed);
+  color: var(--color-on-tertiary-fixed);
+  border-radius: var(--radius-full);
+  padding: 1px;
+  line-height: 1;
+  font-size: 16px;
+}
+.patient-id-strip__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+.patient-id-strip__name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* ── ABHA status bar ── */
+.abha-status-bar {
+  background-color: var(--color-secondary-container);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-size-label-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-on-secondary-container);
+}
+
+/* ── Stats grid for patient portal dashboard ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+@media (min-width: 480px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 768px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1280px) {
+  .stats-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ── Two-column content grid ── */
+.content-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+@media (min-width: 1024px) {
+  .content-grid-2 { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── Three-column content grid ── */
+.content-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+@media (min-width: 768px) {
+  .content-grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1280px) {
+  .content-grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ──────────────────────────────────────────────────────────
+   ADMIN PORTAL SPECIFIC LAYOUTS
+   ────────────────────────────────────────────────────────── */
+/* ── Hospital masthead (identity + HFR ID strip) ── */
+.hospital-masthead {
+  background-color: var(--color-surface-container-lowest);
+  border-bottom: 1px solid var(--color-outline-variant);
+  padding: var(--space-md) var(--gutter-desktop);
+}
+.hospital-masthead__inner {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+@media (min-width: 1024px) {
+  .hospital-masthead__inner { flex-direction: row; align-items: center; justify-content: space-between; }
+}
+.hospital-masthead__badge {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Admin stats grid (4-column) ── */
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+@media (min-width: 768px) {
+  .admin-stats-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ── Queue / table layout ── */
+.queue-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-body-md);
+}
+.queue-table th {
+  text-align: left;
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-size-label-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.06em;
+  color: var(--color-on-surface-variant);
+  border-bottom: 1px solid var(--color-outline-variant);
+  white-space: nowrap;
+}
+.queue-table td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-outline-variant);
+  vertical-align: middle;
+}
+.queue-table tr:last-child td { border-bottom: none; }
+.queue-table tr:hover td { background-color: var(--color-surface-container-low); }
+
+/* ──────────────────────────────────────────────────────────
+   RESPONSIVE UTILITIES
+   ────────────────────────────────────────────────────────── */
+.hide-mobile  { display: none; }
+.hide-desktop { display: block; }
+@media (min-width: 768px) {
+  .hide-mobile  { display: initial; }
+  .hide-desktop { display: none; }
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-col { display: flex; flex-direction: column; }
+.gap-xs  { gap: var(--space-xs); }
+.gap-sm  { gap: var(--space-sm); }
+.gap-md  { gap: var(--space-md); }
+.gap-lg  { gap: var(--space-lg); }
+
+.mt-sm  { margin-top: var(--space-sm); }
+.mt-md  { margin-top: var(--space-md); }
+.mt-lg  { margin-top: var(--space-lg); }
+.mt-xl  { margin-top: var(--space-xl); }
+.mb-sm  { margin-bottom: var(--space-sm); }
+.mb-md  { margin-bottom: var(--space-md); }
+.mb-lg  { margin-bottom: var(--space-lg); }
+.mb-xl  { margin-bottom: var(--space-xl); }

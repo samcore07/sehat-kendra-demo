@@ -1,0 +1,1307 @@
+/* ============================================================
+   SEHAT KENDRA — Clinician Workstation Styles
+   Indian Hospital / e-Hospital OPD Workstation Aesthetic
+   Core colours: #0072B8 | #A4D6E1 | #F4F4F4 | #333333 | #FFFFFF
+   ============================================================ */
+
+/* ── Workstation Container ── */
+.doctor-workstation {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--gutter-desktop);
+  color: #333333;
+}
+
+@media (max-width: 768px) {
+  .doctor-workstation {
+    padding: var(--space-md) var(--gutter-mobile);
+  }
+}
+
+/* ── Top Clinician Banner / Breadcrumb ── */
+.doctor-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #d8e0e6;
+  border-left: 4px solid #0072B8;
+  padding: 10px 16px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.doctor-banner__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: #0072B8;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.doctor-banner__session {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #555555;
+  font-size: 12px;
+}
+
+/* ── Doctor Patient Lookup Page ── */
+.doctor-lookup-card {
+  background: #ffffff;
+  border: 1px solid #d8e0e6;
+  border-radius: 6px;
+  padding: 28px 32px;
+  max-width: 840px;
+  margin: 0 auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.doctor-lookup-header {
+  margin-bottom: 24px;
+  border-bottom: 1px solid #eef2f5;
+  padding-bottom: 18px;
+}
+
+.doctor-lookup-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #eef6fa;
+  color: #0072B8;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border: 1px solid #A4D6E1;
+}
+
+.doctor-lookup-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.doctor-lookup-subtitle {
+  font-size: 14px;
+  color: #555555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Identification Method Tabs ── */
+.id-method-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 22px;
+  background: #f4f4f4;
+  padding: 4px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.id-method-tab {
+  padding: 10px 14px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a5568;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.id-method-tab:hover {
+  color: #0072B8;
+}
+
+.id-method-tab.is-active {
+  background: #ffffff;
+  color: #0072B8;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  border: 1px solid #d0dbe2;
+}
+
+/* ── Lookup Form Controls ── */
+.doctor-search-box {
+  background: #fbfbfb;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.doctor-input-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+@media (max-width: 640px) {
+  .doctor-input-group {
+    flex-direction: column;
+  }
+}
+
+.doctor-input {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-family: inherit;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #333333;
+}
+
+.doctor-input:focus {
+  outline: none;
+  border-color: #0072B8;
+  box-shadow: 0 0 0 3px rgba(0, 114, 184, 0.15);
+}
+
+.btn-clinical-search {
+  background: #0072B8;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 22px;
+  border: 1px solid #005f99;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.btn-clinical-search:hover {
+  background: #005f99;
+}
+
+.btn-clinical-search:disabled {
+  background: #a0aec0;
+  border-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+/* ── Demo Preset Chips ── */
+.demo-preset-container {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.demo-preset-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #718096;
+  margin-bottom: 8px;
+}
+
+.demo-preset-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.demo-chip {
+  font-size: 12px;
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  padding: 4px 10px;
+  border-radius: 14px;
+  color: #2d3748;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.15s ease;
+}
+
+.demo-chip:hover {
+  border-color: #0072B8;
+  background: #f0f7fb;
+  color: #0072B8;
+}
+
+/* ── Feedback States ── */
+.lookup-status-box {
+  padding: 14px 18px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.lookup-status-box.loading {
+  background: #eef6fa;
+  border: 1px solid #A4D6E1;
+  color: #005991;
+}
+
+.lookup-status-box.error {
+  background: #fdf3f2;
+  border: 1px solid #f2c7c5;
+  color: #a9251f;
+}
+
+/* ── Patient Found Confirmation Card ── */
+.patient-found-card {
+  background: #f7fafc;
+  border: 2px solid #0072B8;
+  border-radius: 6px;
+  padding: 22px;
+  margin-top: 24px;
+}
+
+.patient-found-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #0072B8;
+  background: #e6f3fa;
+  border: 1px solid #A4D6E1;
+  padding: 3px 8px;
+  border-radius: 3px;
+  margin-bottom: 12px;
+}
+
+.patient-found-identity {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.patient-avatar-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #0072B8;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid #A4D6E1;
+}
+
+.patient-found-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 4px;
+}
+
+.patient-found-meta {
+  font-size: 14px;
+  color: #4a5568;
+}
+
+.patient-found-abha {
+  font-family: monospace;
+  font-size: 13px;
+  color: #0072B8;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.patient-found-actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+}
+
+.btn-open-history {
+  background: #0072B8;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 22px;
+  border: 1px solid #005f99;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-open-history:hover {
+  background: #005f99;
+}
+
+.btn-search-another {
+  background: #ffffff;
+  color: #4a5568;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-search-another:hover {
+  background: #f7fafc;
+  color: #2d3748;
+}
+
+/* ============================================================
+   STRUCTURED PATIENT SUMMARY WORKSTATION
+   ============================================================ */
+
+/* ── Top Patient Header ── */
+.clinical-summary-header {
+  background: #ffffff;
+  border: 1px solid #d8e0e6;
+  border-top: 3px solid #0072B8;
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.summary-header-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #edf2f7;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.summary-workstation-title {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #0072B8;
+  text-transform: uppercase;
+}
+
+.summary-header-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.summary-tag-verified {
+  background: #e6f4ea;
+  color: #137333;
+  border: 1px solid #ceead6;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.summary-tag-neutral {
+  background: #f1f3f4;
+  color: #5f6368;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.summary-main-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.summary-patient-meta-block {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.summary-patient-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 4px;
+  background: #0072B8;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.summary-patient-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.summary-patient-subtext {
+  font-size: 13px;
+  color: #4a5568;
+  margin-top: 3px;
+}
+
+.summary-patient-subtext code {
+  font-family: monospace;
+  color: #0072B8;
+  font-weight: 700;
+}
+
+.summary-quick-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-clinical-sm {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid #cbd5e0;
+  background: #ffffff;
+  color: #2d3748;
+}
+
+.btn-clinical-sm:hover {
+  background: #f7fafc;
+  border-color: #a0aec0;
+}
+
+.btn-clinical-sm.primary {
+  background: #0072B8;
+  color: #ffffff;
+  border-color: #005f99;
+}
+
+.btn-clinical-sm.primary:hover {
+  background: #005f99;
+}
+
+/* ── Section 1: Compact Clinical Snapshot ── */
+.clinical-snapshot-card {
+  background: #ffffff;
+  border: 1px solid #d8e0e6;
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.snapshot-heading {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0072B8;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 1024px) {
+  .snapshot-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .snapshot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.snapshot-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 10px 12px;
+}
+
+.snapshot-item.alert {
+  border-left: 3px solid #d97706;
+  background: #fffbeb;
+}
+
+.snapshot-item.alert-danger {
+  border-left: 3px solid #dc2626;
+  background: #fef2f2;
+}
+
+.snapshot-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.snapshot-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.35;
+}
+
+/* ── Layout Grid for Workstation ── */
+.workstation-two-column {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1024px) {
+  .workstation-two-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Generic Clinical Card ── */
+.clinical-card {
+  background: #ffffff;
+  border: 1px solid #d8e0e6;
+  border-radius: 4px;
+  margin-bottom: 18px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.clinical-card-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid #edf2f7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fafbfc;
+}
+
+.clinical-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clinical-card-body {
+  padding: 16px;
+}
+
+/* ── Section 2: Key-Value Clinical Scan Grid ── */
+.clinical-kv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 18px;
+}
+
+@media (max-width: 640px) {
+  .clinical-kv-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kv-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px dashed #edf2f7;
+  padding: 6px 0;
+  font-size: 13px;
+}
+
+.kv-key {
+  color: #64748b;
+  font-weight: 500;
+  width: 45%;
+}
+
+.kv-val {
+  color: #1e293b;
+  font-weight: 600;
+  width: 55%;
+  text-align: right;
+}
+
+/* ── Section 3 & 4: Tables ── */
+.clinical-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.clinical-table th {
+  background: #f1f5f9;
+  color: #475569;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-bottom: 1px solid #cbd5e1;
+  text-align: left;
+}
+
+.clinical-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #1e293b;
+  vertical-align: middle;
+}
+
+.clinical-table tr:last-child td {
+  border-bottom: none;
+}
+
+.clinical-table tr:hover td {
+  background: #f8fafc;
+}
+
+/* ── Status and Tag Badges ── */
+.tag-current {
+  background: #e6f4ea;
+  color: #137333;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.tag-alert-elevated {
+  background: #fff3e0;
+  color: #b74700;
+  border: 1px solid #ffe0b2;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.tag-alert-normal {
+  background: #f1f8e9;
+  color: #2e7d32;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+/* ── Section 4 Allergies Callout ── */
+.allergy-banner {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-left: 4px solid #dc2626;
+  border-radius: 4px;
+  padding: 10px 14px;
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.allergy-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #991b1b;
+}
+
+.allergy-reaction {
+  font-size: 12px;
+  color: #b91c1c;
+}
+
+/* ── Section 8: Timeline ── */
+.clinical-timeline {
+  position: relative;
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.clinical-timeline::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 6px;
+  width: 2px;
+  background: #cbd5e1;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -20px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #0072B8;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px #0072B8;
+}
+
+.timeline-year {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0072B8;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.timeline-event {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 1px 0;
+}
+
+.timeline-detail {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* ── Section 9: Attention Required (Alerts) ── */
+.attention-card {
+  border-left: 4px solid #d97706;
+}
+
+.attention-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.attention-item:last-child {
+  border-bottom: none;
+}
+
+.attention-item-warning {
+  color: #b45309;
+}
+
+.attention-item-info {
+  color: #0284c7;
+}
+
+.attention-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.attention-value {
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #d97706;
+  margin-left: 6px;
+}
+
+.attention-note {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 1px;
+}
+
+/* ── Section 10: Pre-Consultation Summary ── */
+.preconsult-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 14px 16px;
+  line-height: 1.6;
+  font-size: 13.5px;
+  color: #1e293b;
+}
+
+.preconsult-disclaimer {
+  font-size: 11px;
+  color: #64748b;
+  font-style: italic;
+  margin-top: 8px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 6px;
+}
+
+/* ── Section 11: History Completeness ── */
+.completeness-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.completeness-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: #f8fafc;
+  border: 1px solid #edf2f7;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.completeness-badge-ok {
+  color: #16a34a;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.completeness-badge-pending {
+  color: #d97706;
+  font-weight: 600;
+  font-size: 11px;
+  background: #fffbeb;
+  padding: 1px 6px;
+  border-radius: 3px;
+  border: 1px solid #fef3c7;
+}
+
+/* ── Section 12: AYUSH Support ── */
+.ayush-parameters-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 14px;
+}
+
+@media (max-width: 640px) {
+  .ayush-parameters-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ayush-param-item {
+  border-bottom: 1px dashed #e2e8f0;
+  padding: 5px 0;
+  font-size: 12.5px;
+}
+
+.ayush-param-label {
+  font-weight: 600;
+  color: #0d9488;
+}
+
+.ayush-param-value {
+  color: #334155;
+}
+
+/* ── Section 7: Documents List ── */
+.document-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.document-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  background: #ffffff;
+  transition: border-color 0.15s ease;
+}
+
+.document-row:hover {
+  border-color: #0072B8;
+  background: #f8fafc;
+}
+
+.document-meta-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.document-meta-sub {
+  font-size: 11.5px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.btn-doc-view {
+  background: #ffffff;
+  color: #0072B8;
+  border: 1px solid #0072B8;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn-doc-view:hover {
+  background: #0072B8;
+  color: #ffffff;
+}
+
+/* ── Part 5: Sticky Doctor Action Bar ── */
+.doctor-action-bar-sticky {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-top: 1px solid #cbd5e1;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.05);
+  padding: 12px var(--gutter-desktop);
+  z-index: 45;
+}
+
+.action-bar-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.action-disclaimer {
+  font-size: 11px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.action-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-action-bar {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #cbd5e0;
+  background: #ffffff;
+  color: #1e293b;
+  transition: all 0.15s ease;
+}
+
+.btn-action-bar:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.btn-action-bar.primary {
+  background: #0072B8;
+  color: #ffffff;
+  border-color: #005f99;
+}
+
+.btn-action-bar.primary:hover {
+  background: #005f99;
+}
+
+/* ── Workstation Modal Styles ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  padding: 14px 20px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #64748b;
+}
+
+.modal-body {
+  padding: 20px;
+  font-size: 13.5px;
+}
+
+.modal-footer {
+  padding: 12px 20px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* ── Print Media Optimization ── */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .gov-ribbon,
+  .main-header,
+  .doctor-banner,
+  .doctor-action-bar-sticky,
+  .btn,
+  .btn-clinical-sm,
+  .btn-doc-view,
+  .modal-overlay,
+  .app-footer {
+    display: none !important;
+  }
+
+  .doctor-workstation {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .clinical-summary-header,
+  .clinical-snapshot-card,
+  .clinical-card {
+    border: 1px solid #000000 !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+}
+
+/* ============================================================
+   DARK THEME — reuse the shared Sehat Kendra surface hierarchy.
+   This layer intentionally scopes changes to the clinical workstation,
+   preserving the existing light-mode workstation treatment.
+   ============================================================ */
+[data-theme="dark"] .doctor-workstation {
+  color: var(--color-on-surface);
+}
+
+[data-theme="dark"] .doctor-banner,
+[data-theme="dark"] .doctor-lookup-card,
+[data-theme="dark"] .clinical-summary-header,
+[data-theme="dark"] .clinical-snapshot-card,
+[data-theme="dark"] .clinical-card,
+[data-theme="dark"] .modal-content,
+[data-theme="dark"] .doctor-action-bar-sticky {
+  background: var(--color-surface-container-lowest);
+  border-color: var(--color-outline-variant);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .doctor-banner,
+[data-theme="dark"] .clinical-summary-header {
+  border-left-color: var(--color-primary);
+}
+[data-theme="dark"] .clinical-summary-header { border-top-color: var(--color-primary); }
+
+[data-theme="dark"] .doctor-banner__badge,
+[data-theme="dark"] .doctor-lookup-tag,
+[data-theme="dark"] .summary-workstation-title,
+[data-theme="dark"] .snapshot-heading,
+[data-theme="dark"] .timeline-year,
+[data-theme="dark"] .patient-found-abha,
+[data-theme="dark"] .summary-patient-subtext code { color: var(--color-primary); }
+[data-theme="dark"] .doctor-banner__session,
+[data-theme="dark"] .doctor-lookup-subtitle,
+[data-theme="dark"] .patient-found-meta,
+[data-theme="dark"] .summary-patient-subtext,
+[data-theme="dark"] .snapshot-label,
+[data-theme="dark"] .kv-key,
+[data-theme="dark"] .timeline-detail,
+[data-theme="dark"] .attention-note,
+[data-theme="dark"] .preconsult-disclaimer,
+[data-theme="dark"] .document-meta-sub,
+[data-theme="dark"] .action-disclaimer { color: var(--color-on-surface-variant); }
+[data-theme="dark"] .doctor-lookup-title,
+[data-theme="dark"] .patient-found-name,
+[data-theme="dark"] .summary-patient-name,
+[data-theme="dark"] .clinical-card-title,
+[data-theme="dark"] .snapshot-value,
+[data-theme="dark"] .kv-val,
+[data-theme="dark"] .clinical-table td,
+[data-theme="dark"] .timeline-event,
+[data-theme="dark"] .attention-title,
+[data-theme="dark"] .preconsult-box,
+[data-theme="dark"] .document-meta-title,
+[data-theme="dark"] .modal-title { color: var(--color-on-surface); }
+
+[data-theme="dark"] .doctor-lookup-header,
+[data-theme="dark"] .summary-header-topline,
+[data-theme="dark"] .clinical-card-header,
+[data-theme="dark"] .patient-found-actions,
+[data-theme="dark"] .demo-preset-container,
+[data-theme="dark"] .kv-row,
+[data-theme="dark"] .preconsult-disclaimer,
+[data-theme="dark"] .ayush-param-item,
+[data-theme="dark"] .attention-item,
+[data-theme="dark"] .modal-header,
+[data-theme="dark"] .modal-footer { border-color: var(--color-outline-variant); }
+
+[data-theme="dark"] .doctor-lookup-tag,
+[data-theme="dark"] .patient-found-badge,
+[data-theme="dark"] .lookup-status-box.loading {
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  border-color: var(--color-primary);
+}
+[data-theme="dark"] .id-method-tabs,
+[data-theme="dark"] .doctor-search-box,
+[data-theme="dark"] .snapshot-item,
+[data-theme="dark"] .preconsult-box,
+[data-theme="dark"] .completeness-item,
+[data-theme="dark"] .modal-header,
+[data-theme="dark"] .modal-footer { background: var(--color-surface-container-low); border-color: var(--color-outline-variant); }
+[data-theme="dark"] .id-method-tab { color: var(--color-on-surface-variant); }
+[data-theme="dark"] .id-method-tab:hover { color: var(--color-primary); background: var(--color-surface-container); }
+[data-theme="dark"] .id-method-tab.is-active { background: var(--color-surface-container-lowest); color: var(--color-primary); border-color: var(--color-outline-variant); box-shadow: none; }
+[data-theme="dark"] .doctor-input,
+[data-theme="dark"] .demo-chip,
+[data-theme="dark"] .btn-clinical-sm,
+[data-theme="dark"] .btn-search-another,
+[data-theme="dark"] .btn-action-bar,
+[data-theme="dark"] .document-row,
+[data-theme="dark"] .btn-doc-view { background: var(--color-surface-container-lowest); color: var(--color-on-surface); border-color: var(--color-outline); }
+[data-theme="dark"] .doctor-input::placeholder { color: var(--color-on-surface-variant); opacity: 1; }
+[data-theme="dark"] .doctor-input:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(155, 203, 255, .18); }
+[data-theme="dark"] .demo-chip:hover,
+[data-theme="dark"] .btn-clinical-sm:hover,
+[data-theme="dark"] .btn-search-another:hover,
+[data-theme="dark"] .btn-action-bar:hover,
+[data-theme="dark"] .document-row:hover { background: var(--color-surface-container); border-color: var(--color-primary); color: var(--color-on-surface); }
+
+[data-theme="dark"] .clinical-card-header,
+[data-theme="dark"] .clinical-table th { background: var(--color-surface-container); color: var(--color-on-surface-variant); border-color: var(--color-outline-variant); }
+[data-theme="dark"] .clinical-table td { border-color: var(--color-outline-variant); }
+[data-theme="dark"] .clinical-table tr:hover td { background: var(--color-surface-container-low); }
+[data-theme="dark"] .patient-found-card { background: var(--color-surface-container-low); border-color: var(--color-primary); }
+[data-theme="dark"] .snapshot-item.alert { background: #342b18; }
+[data-theme="dark"] .snapshot-item.alert-danger,
+[data-theme="dark"] .allergy-banner { background: #3a2023; border-color: #8f464b; }
+[data-theme="dark"] .allergy-name,
+[data-theme="dark"] .allergy-reaction { color: #ffb4ab; }
+[data-theme="dark"] .tag-current,
+[data-theme="dark"] .tag-alert-normal,
+[data-theme="dark"] .summary-tag-verified { background: #173d30; color: #90d4bc; border-color: #3d7766; }
+[data-theme="dark"] .tag-alert-elevated,
+[data-theme="dark"] .completeness-badge-pending { background: #342b18; color: #ffd59b; border-color: #84672e; }
+[data-theme="dark"] .timeline-dot { border-color: var(--color-surface-container-lowest); }
+[data-theme="dark"] .clinical-timeline::before { background: var(--color-outline); }
+[data-theme="dark"] .document-row { background: var(--color-surface-container-lowest); }
+[data-theme="dark"] .btn-doc-view { color: var(--color-primary); border-color: var(--color-primary); }
+[data-theme="dark"] .btn-doc-view:hover { background: var(--color-primary); color: var(--color-on-primary); }
+
+/* The original summary contains presentation-only inline light colours.
+   These narrowly targeted rules keep those labels readable in dark mode. */
+[data-theme="dark"] .doctor-workstation label[style],
+[data-theme="dark"] .doctor-workstation li[style],
+[data-theme="dark"] .doctor-workstation td[style],
+[data-theme="dark"] .doctor-workstation p[style] { color: var(--color-on-surface) !important; }
+[data-theme="dark"] .doctor-workstation [style*="margin-top"]:not(button):not(input) { border-color: var(--color-outline-variant); }

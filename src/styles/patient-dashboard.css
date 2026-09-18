@@ -1,0 +1,261 @@
+/* ============================================================
+   SEHAT KENDRA — Patient Dashboard Layout & Interaction Polish
+   Core colours: #0072B8 | #A4D6E1 | #F4F4F4 | #333333 | #FFFFFF
+   ============================================================ */
+
+/* ── Centered Content Container ── */
+.patient-dashboard-container {
+  max-width: 1220px;
+  width: calc(100% - 64px);
+  margin: 0 auto;
+  padding: 28px 0 60px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .patient-dashboard-container {
+    width: calc(100% - 32px);
+    padding: 20px 0 40px;
+  }
+}
+
+/* ── Header Area ── */
+.patient-dashboard-header {
+  margin-bottom: 26px;
+}
+
+.patient-dashboard-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.patient-dashboard-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  line-height: 1.25;
+  margin: 6px 0 4px;
+}
+
+@media (min-width: 768px) {
+  .patient-dashboard-title {
+    font-size: 28px;
+  }
+}
+
+.patient-dashboard-subtitle {
+  font-size: 14px;
+  color: var(--color-on-surface-variant);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Section Headings ── */
+.dashboard-section-heading {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Primary Health Actions Grid (Even 4-Column Layout) ── */
+.primary-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .primary-actions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .primary-actions-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ── Primary Action Card ── */
+.primary-action-card {
+  background: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-xl);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-sm);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  position: relative;
+}
+
+.primary-action-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: #0072B8;
+}
+
+.action-card-accent-1 { border-left: 4px solid var(--color-primary); }
+.action-card-accent-2 { border-left: 4px solid var(--color-tertiary); }
+.action-card-accent-3 { border-left: 4px solid var(--color-secondary); }
+.action-card-accent-4 { border-left: 4px solid #0072B8; }
+
+.action-card-icon {
+  margin-bottom: 14px;
+}
+
+.action-card-icon .icon {
+  font-size: 32px;
+}
+
+.action-card-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.action-card-desc {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-on-surface-variant);
+  line-height: 1.55;
+  margin: 0 0 20px;
+  flex: 1;
+}
+
+/* ── Standardized Action Buttons ── */
+.dashboard-action-btn {
+  margin-top: auto;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  background: var(--color-surface-container-low);
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline-variant);
+  transition: all 180ms ease;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.dashboard-action-btn:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-on-primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.dashboard-action-btn:hover .icon {
+  color: var(--color-on-primary);
+}
+
+.dashboard-action-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.dashboard-action-btn:active {
+  transform: translateY(0);
+}
+
+/* ── Balanced Two-Column Sections ── */
+.dashboard-two-column-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 28px;
+  width: 100%;
+}
+
+@media (max-width: 960px) {
+  .dashboard-two-column-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* ── Record Items & Wellness Items ── */
+.dashboard-record-item {
+  padding: 14px 16px;
+  background: var(--color-surface-container-low);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.dashboard-record-item:hover {
+  background: var(--color-surface-container);
+  border-color: var(--color-outline-variant);
+  transform: translateX(2px);
+}
+
+.dashboard-record-title {
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--color-on-surface);
+  margin-bottom: 3px;
+}
+
+.dashboard-record-desc {
+  font-size: 13.5px;
+  color: var(--color-on-surface-variant);
+  line-height: 1.45;
+}
+
+.dashboard-wellness-item {
+  padding: 12px 14px;
+  background: var(--color-surface-container-low);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.dashboard-wellness-item:hover {
+  background: var(--color-surface-container);
+  border-color: var(--color-outline-variant);
+  transform: translateX(2px);
+}
+
+.dashboard-wellness-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin-bottom: 2px;
+}
+
+.dashboard-wellness-desc {
+  font-size: 13px;
+  color: var(--color-on-surface-variant);
+  line-height: 1.4;
+}

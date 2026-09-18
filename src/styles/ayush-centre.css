@@ -1,0 +1,521 @@
+/* ============================================================
+   SEHAT KENDRA — Ayurveda & AYUSH Centre Page Styles
+   Palette: Deep Green #176B57 | Primary Green #237A63
+             Light Green #DDEFE5 | Very Light #F2F8F4
+             Background #F7FAF8 | Text #333333
+   ============================================================ */
+
+/* ── Scoped Ayurveda Colour Tokens ── */
+.ayush-page {
+  --ayush-deep:        #176B57;
+  --ayush-primary:     #237A63;
+  --ayush-mid:         #2E8B73;
+  --ayush-light:       #DDEFE5;
+  --ayush-very-light:  #F2F8F4;
+  --ayush-bg:          #F7FAF8;
+  --ayush-border:      #B2D9CC;
+  --ayush-border-soft: #D4EDE5;
+  --ayush-text:        #333333;
+  --ayush-text-sec:    #5F6B66;
+  --ayush-white:       #FFFFFF;
+}
+
+[data-theme="dark"] .ayush-page,
+body[data-theme="dark"] .ayush-page {
+  --ayush-deep:        #4ade80;
+  --ayush-primary:     #34d399;
+  --ayush-mid:         #10b981;
+  --ayush-light:       #064e3b;
+  --ayush-very-light:  #0d2820;
+  --ayush-bg:          var(--color-surface, #121212);
+  --ayush-border:      #134e4a;
+  --ayush-border-soft: #1e3a34;
+  --ayush-text:        #f1f5f9;
+  --ayush-text-sec:    #cbd5e1;
+  --ayush-white:       #1e293b;
+}
+
+/* ── Page Wrapper ── */
+.ayush-page {
+  background: var(--ayush-bg);
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* ── Centered Content Container ── */
+.ayush-container {
+  max-width: 1180px;
+  width: calc(100% - 64px);
+  margin: 0 auto;
+  padding: 32px 0 56px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .ayush-container {
+    width: calc(100% - 40px);
+    padding: 24px 0 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ayush-container {
+    width: calc(100% - 32px);
+    padding: 20px 0 32px;
+  }
+}
+
+/* ── Breadcrumb Row ── */
+.ayush-breadcrumb-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+/* ── Back Button ── */
+.ayush-btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ayush-deep);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
+  text-decoration: none;
+}
+
+.ayush-btn-back:hover {
+  background: var(--ayush-light);
+  border-color: var(--ayush-border);
+  transform: translateX(-2px);
+}
+
+.ayush-btn-back:focus-visible {
+  outline: 2px solid var(--ayush-primary);
+  outline-offset: 2px;
+}
+
+/* ── Ministry Badge ── */
+.ayush-ministry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ayush-deep);
+  background: var(--ayush-light);
+  border: 1px solid var(--ayush-border);
+  border-radius: var(--radius-full);
+}
+
+/* ── Hero Introduction Card ── */
+.ayush-hero-card {
+  background: var(--ayush-very-light);
+  border: 1px solid var(--ayush-border);
+  border-radius: var(--radius-xl);
+  padding: 32px 36px;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.ayush-hero-body {
+  max-width: 720px;
+  flex: 1;
+}
+
+.ayush-hero-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.ayush-hero-icon {
+  font-size: 30px;
+  color: var(--ayush-primary);
+}
+
+.ayush-hero-heading {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ayush-text);
+  margin: 0;
+  line-height: 1.25;
+}
+
+@media (min-width: 1024px) {
+  .ayush-hero-heading { font-size: 30px; }
+}
+
+.ayush-hero-desc {
+  font-size: 15px;
+  color: var(--ayush-text-sec);
+  line-height: 1.65;
+  margin: 0 0 22px;
+}
+
+/* ── Action Buttons Row ── */
+.ayush-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ── Action Button — neutral default, deep green on hover ── */
+.ayush-btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ayush-deep);
+  background: var(--ayush-white);
+  border: 1.5px solid var(--ayush-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+  text-decoration: none;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.ayush-btn-action:hover {
+  background: var(--ayush-deep);
+  border-color: var(--ayush-deep);
+  color: var(--ayush-white);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(23, 107, 87, 0.20);
+}
+
+.ayush-btn-action:hover .icon {
+  color: var(--ayush-white);
+}
+
+.ayush-btn-action:focus-visible {
+  outline: 2px solid var(--ayush-primary);
+  outline-offset: 2px;
+}
+
+.ayush-btn-action:active {
+  transform: translateY(0);
+}
+
+/* Outline variant (secondary) */
+.ayush-btn-action-outline {
+  background: transparent;
+}
+
+.ayush-btn-action-outline:hover {
+  background: var(--ayush-light);
+  border-color: var(--ayush-primary);
+  color: var(--ayush-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(23, 107, 87, 0.12);
+}
+
+/* ── Statutory Disclaimer Box ── */
+.ayush-disclaimer {
+  background: var(--ayush-white);
+  border-left: 4px solid var(--ayush-primary);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.ayush-disclaimer-icon {
+  color: var(--ayush-primary);
+  margin-top: 1px;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.ayush-disclaimer-text {
+  font-size: 13px;
+  color: var(--ayush-text-sec);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.ayush-disclaimer-text strong {
+  color: var(--ayush-deep);
+  font-weight: 700;
+}
+
+/* ── Wellness Section Heading ── */
+.ayush-section-heading {
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--ayush-text);
+  margin: 0 0 20px;
+  line-height: 1.3;
+}
+
+/* ── Wellness Category Tabs Grid ── */
+.ayush-category-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1050px) {
+  .ayush-category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ayush-category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+/* ── Category Tab Button ── */
+/* ALL tabs start neutral — no tab is pre-highlighted */
+.ayush-cat-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ayush-text);
+  background: var(--ayush-white);
+  border: 1.5px solid var(--ayush-border-soft);
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Hover state — identical for every tab */
+.ayush-cat-btn:hover {
+  background: var(--ayush-light);
+  border-color: var(--ayush-border);
+  color: var(--ayush-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(23, 107, 87, 0.10);
+}
+
+/* Selected state — only when user has clicked this tab.
+   Calm tinted background + accent border; NOT a filled vivid highlight. */
+.ayush-cat-btn--selected {
+  background: var(--ayush-very-light);
+  border: 2px solid var(--ayush-primary);
+  color: var(--ayush-deep);
+}
+
+/* Hovering over the already-selected tab */
+.ayush-cat-btn--selected:hover {
+  background: var(--ayush-light);
+  border-color: var(--ayush-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(23, 107, 87, 0.12);
+}
+
+.ayush-cat-btn:focus-visible {
+  outline: 2px solid var(--ayush-primary);
+  outline-offset: 2px;
+}
+
+.ayush-cat-icon {
+  font-size: 22px;
+  color: var(--ayush-primary);
+  flex-shrink: 0;
+  transition: color 200ms ease;
+}
+
+.ayush-cat-btn--selected .ayush-cat-icon {
+  color: var(--ayush-deep);
+}
+
+.ayush-cat-btn:hover .ayush-cat-icon {
+  color: var(--ayush-deep);
+}
+
+/* ── Active Category Detail Card ── */
+.ayush-detail-card {
+  background: var(--ayush-white);
+  border: 1px solid var(--ayush-border-soft);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  margin-bottom: 40px;
+}
+
+.ayush-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* ── Lifestyle Protocol Badge ── */
+.ayush-protocol-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ayush-deep);
+  background: var(--ayush-light);
+  border: 1px solid var(--ayush-border);
+  border-radius: var(--radius-full);
+  margin-bottom: 7px;
+}
+
+.ayush-detail-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ayush-text);
+  margin: 0 0 4px;
+  line-height: 1.3;
+}
+
+.ayush-detail-tagline {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ayush-primary);
+  margin: 0;
+}
+
+.ayush-detail-summary {
+  font-size: 15px;
+  color: var(--ayush-text-sec);
+  line-height: 1.65;
+  margin: 0 0 24px;
+}
+
+/* ── Practices Grid ── */
+.ayush-practices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.ayush-practice-item {
+  padding: 16px 18px;
+  background: var(--ayush-very-light);
+  border: 1px solid var(--ayush-border-soft);
+  border-radius: var(--radius-lg);
+}
+
+.ayush-practice-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ayush-deep);
+  margin-bottom: 7px;
+}
+
+.ayush-practice-desc {
+  font-size: 14px;
+  color: var(--ayush-text);
+  line-height: 1.58;
+  margin: 0;
+}
+
+/* ── Detail Card Footer ── */
+.ayush-detail-footer {
+  border-top: 1px solid var(--ayush-border-soft);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ayush-lifestyle-note {
+  font-size: 13px;
+  color: var(--ayush-text-sec);
+  font-style: italic;
+  line-height: 1.5;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Vaidya CTA Button ── */
+.ayush-btn-vaidya {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ayush-deep);
+  background: var(--ayush-white);
+  border: 1.5px solid var(--ayush-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.ayush-btn-vaidya:hover {
+  background: var(--ayush-primary);
+  border-color: var(--ayush-primary);
+  color: var(--ayush-white);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(23, 107, 87, 0.18);
+}
+
+.ayush-btn-vaidya:hover .icon {
+  color: var(--ayush-white);
+}
+
+.ayush-btn-vaidya:focus-visible {
+  outline: 2px solid var(--ayush-primary);
+  outline-offset: 2px;
+}
+
+.ayush-btn-vaidya:active {
+  transform: translateY(0);
+}
